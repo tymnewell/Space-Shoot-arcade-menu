@@ -52,6 +52,11 @@ window.addEventListener('keydown', (e) => {
         const targetUrl = items[currentIndex].getAttribute('data-target');
         window.location.href = targetUrl;
     }
+    else if (e.key.toLowerCase() === 'i') {
+        // Stop audio and go to instruction card
+        bgMusic.pause();
+        window.location.href = 'instruction_card.html';
+    }
 });
 
 // Also trigger on mouse click (for ease of PC testing)
