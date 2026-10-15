@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: black;
+    background-image: url('menuBG.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: 'Press Start 2P', 'Courier New', monospace;
+    overflow: hidden;
+    margin: 0;
+    user-select: none;
+}
+
+#demo-video {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 100;
+}
+
+#menu-container {
+    position: relative;
+    z-index: 2; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* Semi-transparent dark overlay to make text/logos pop against the background image */
+    background: rgba(0, 0, 0, 0.4); 
+}
+
+.header {
+    font-size: 2.2rem;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    margin-bottom: 50px;
+    letter-spacing: 2px;
+}
+
+#game-carousel {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 250px;
+}
+
+.game-item {
+    width: 300px;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.3;
+    filter: grayscale(80%);
+    border: 4px solid transparent;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.game-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.game-item.selected {
+    opacity: 1;
+    filter: grayscale(0%);
+    transform: scale(1.2);
+    border: 4px solid #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.footer-container {
+    margin-top: 80px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.sub-message {
+    font-size: 0.85rem;
+    color: #aaaaaa;
+}
+
+.developer-logo {
+    height: 48px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+}

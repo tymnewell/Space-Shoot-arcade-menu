@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space Shoot Arcade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Idle Demo Video (overlay on top - unmuted for audio) -->
+    <video id="demo-video" src="demo.mp4" loop></video>
+
+    <!-- Main Arcade Interface -->
+    <div id="menu-container">
+        <div class="header">SELECT YOUR MISSION</div>
+        
+        <div id="game-carousel">
+            <!-- Game 1 -->
+            <div class="game-item selected" data-target="spaceshoot1/index.html">
+                <img src="SpaceShoot 1 LOGO_2.jpg" alt="Space Shoot 1">
+            </div>
+            <!-- Game 2 -->
+            <div class="game-item" data-target="spaceshoot2/index.html">
+                <img src="SpaceShoot 2 LOGO_2.jpg" alt="Space Shoot 2">
+            </div>
+            <!-- Game 3 -->
+            <div class="game-item" data-target="spaceshoot3d/index.html">
+                <img src="SpaceShoot 3 LOGO_2.png" alt="Space Shoot 3D">
+            </div>
+        </div>
+
+        <!-- System Controls & Branding Footer -->
+        <div class="footer-container">
+            <div class="sub-message">ARROWS/JOYSTICK : Navigate | SPACE / R : Start Game | Q: Exit</div>
+            <img class="developer-logo" src="NWS.png" alt="NWS Logo">
+        </div>
+    </div>
+
+    <script src="arcade.js"></script>
+</body>
+</html>
