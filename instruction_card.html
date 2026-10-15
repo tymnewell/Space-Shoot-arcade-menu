@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Shoot Trilogy - Instruction Cards</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        body {
+            background-color: #111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 60px;
+            padding: 50px 0;
+            margin: 0;
+            font-family: 'Press Start 2P', monospace;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        .nav-link {
+            color: #ffcc00;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 15px 30px;
+            border: 4px solid #ffcc00;
+            background-color: #000;
+            text-shadow: 2px 2px #000;
+            box-shadow: 4px 4px 0px #000;
+            transition: all 0.2s;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .nav-link:hover {
+            background-color: #ffcc00;
+            color: #000;
+            text-shadow: none;
+        }
+
+        .card-container {
+            background-color: #000;
+            border: 6px solid #00ffff;
+            border-radius: 15px;
+            width: 900px;
+            padding: 30px;
+            box-shadow: 10px 10px 0px #ff00ff, 0 0 30px rgba(0, 255, 255, 0.4) inset;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Scanline effect */
+        .card-container::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            z-index: 2;
+            background-size: 100% 4px, 3px 100%;
+            pointer-events: none;
+        }
+
+        /* Color variations for Space Shoot 2 */
+        .card-container.sequel {
+            border-color: #ff00ff;
+            box-shadow: 10px 10px 0px #00ffff, 0 0 30px rgba(255, 0, 255, 0.4) inset;
+        }
+        
+        .sequel .subtitle { color: #ff00ff; }
+        .sequel .section-title { color: #00ffff; }
+
+        /* Color variations for Space Shoot 3D */
+        .card-container.three-d {
+            border-color: #ffcc00;
+            box-shadow: 10px 10px 0px #ff0000, 0 0 30px rgba(255, 204, 0, 0.4) inset;
+        }
+        
+        .three-d .subtitle { color: #ff3333; }
+        .three-d .section-title { color: #00ff00; }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 4px dashed #444;
+            padding-bottom: 20px;
+        }
+
+        .title {
+            color: #ffcc00;
+            font-size: 42px;
+            text-shadow: 4px 4px 0px #ff0000;
+            margin: 0 0 10px 0;
+        }
+
+        .subtitle {
+            color: #00ffff;
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .content-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+        }
+
+        .column {
+            flex: 1;
+        }
+
+        .section-title {
+            color: #ff00ff;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-decoration: underline;
+            text-underline-offset: 8px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 25px;
+            font-size: 13px;
+            line-height: 1.8;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .key {
+            display: inline-block;
+            background: #222;
+            border: 2px solid #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: #00ff00;
+            margin-right: 15px;
+            min-width: 90px;
+            text-align: center;
+            box-shadow: 2px 2px 0px #fff;
+            position: relative;
+            z-index: 3;
+        }
+
+        .desc {
+            flex: 1;
+            color: #ddd;
+            position: relative;
+            z-index: 3;
+        }
+
+        .highlight-red { color: #ff3333; }
+        .highlight-green { color: #33ff33; }
+        .highlight-blue { color: #33ccff; }
+        .highlight-yellow { color: #ffcc00; }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 10px;
+            color: #666;
+            border-top: 4px dashed #444;
+            padding-top: 20px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .credit {
+            color: #ff9900;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Link -->
+    <a href="https://tymnewell.github.io/Space-Shoot-arcade-menu/" class="nav-link">RETURN TO ARCADE MENU [Q]</a>
+
+    <!-- SPACE SHOOT 1 CARD -->
+    <div class="card-container">
+        <div class="header">
+            <h1 class="title">SPACE SHOOT</h1>
+            <div class="subtitle">ARCADE OPERATION MANUAL</div>
+        </div>
+
+        <div class="content-grid">
+            <div class="column">
+                <h2 class="section-title">CABINET CONTROLS</h2>
+                <ul>
+                    <li>
+                        <span class="key">JOYSTICK</span>
+                        <span class="desc">Navigate Ship <br><span style="font-size:10px; color:#888;">(Left/Right Only)</span></span>
+                    </li>
+                    <li>
+                        <span class="key" style="color:#ff3333; border-color:#ff3333; box-shadow: 2px 2px 0px #ff3333;">RED BTN</span>
+                        <span class="desc">Fire Lasers <br><span style="font-size:10px; color:#888;">(Spacebar)</span></span>
+                    </li>
+                    <li>
+                        <span class="key" style="color:#00ffff; border-color:#00ffff; box-shadow: 2px 2px 0px #00ffff;">1 PLAYER</span>
+                        <span class="desc">Start Game <br><span style="font-size:10px; color:#888;">(R)</span></span>
+                    </li>
+                    <li>
+                        <span class="key">2 PLAYER</span>
+                        <span class="desc">Quit to Menu <br><span style="font-size:10px; color:#888;">(ESC)</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <h2 class="section-title">MISSION BRIEFING</h2>
+                <ul>
+                    <li>
+                        <span class="desc"><span class="highlight-yellow">OBJECTIVE:</span> Earth is under attack! Destroy the descending alien fleets and rack up a massive high score.</span>
+                    </li>
+                    <li>
+                        <span class="desc"><span class="highlight-red">HAZARDS:</span> Enemy ships will attempt to crash into you. Dodge their formations and clear the sector!</span>
+                    </li>
+                    <li>
+                        <span class="desc"><span class="highlight-blue">HOTKEYS:</span><br><br>
+                        - Press <strong>CTRL+P</strong> to Pause<br>
+                        - Press <strong>Q</strong> to Exit Cabinet</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="credit">PRODUCED BY NEWELL WEB SOLUTIONS</div>
+            INSERT COIN TO CONTINUE
+        </div>
+    </div>
+
+    <!-- SPACE SHOOT 2 CARD -->
+    <div class="card-container sequel">
+        <div class="header">
+            <h1 class="title">SPACE SHOOT 2</h1>
+            <div class="subtitle">RETALIATION MANUAL</div>
+        </div>
+
+        <div class="content-grid">
+            <div class="column">
+                <h2 class="section-title">CABINET CONTROLS</h2>
+                <ul>
+                    <li>
+                        <span class="key">JOYSTICK</span>
+                        <span class="desc">Navigate Ship <br><span style="font-size:10px; color:#888;">(Multi-Directional: Up/Down/Left/Right)</span></span>
+                    </li>
+                    <li>
+                        <span class="key" style="color:#ff3333; border-color:#ff3333; box-shadow: 2px 2px 0px #ff3333;">RED BTN</span>
+                        <span class="desc">Fire Heavy Lasers <br><span style="font-size:10px; color:#888;">(Spacebar)</span></span>
+                    </li>
+                    <li>
+                        <span class="key" style="color:#00ffff; border-color:#00ffff; box-shadow: 2px 2px 0px #00ffff;">1 PLAYER</span>
+                        <span class="desc">Start Game <br><span style="font-size:10px; color:#888;">(R)</span></span>
+                    </li>
+                    <li>
+                        <span class="key">2 PLAYER</span>
+                        <span class="desc">Quit to Menu <br><span style="font-size:10px; color:#888;">(ESC)</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <h2 class="section-title">MISSION BRIEFING</h2>
+                <ul>
+                    <li>
+                        <span class="desc"><span class="highlight-yellow">OBJECTIVE:</span> The alien armada has returned! Engage deadlier enemy formations, survive brutal attack waves, and defeat Sector Bosses.</span>
+                    </li>
+                    <li>
+                        <span class="desc"><span class="highlight-red">HAZARDS:</span> Beware of advanced alien tracking systems, heavy projectiles, and high-speed kamikaze fighters.</span>
+                    </li>
+                    <li>
+                        <span class="desc"><span class="highlight-blue">HOTKEYS:</span><br><br>
+                        - Press <strong>CTRL+P</strong> to Pause<br>
+                        - Press <strong>Q</strong> to Exit Cabinet</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="credit">PRODUCED BY NEWELL WEB SOLUTIONS</div>
+            INSERT COIN TO CONTINUE
+        </div>
+    </div>
+
+    <!-- SPACE SHOOT 3D CARD -->
+    <div class="card-container three-d">
+        <div class="header">
+            <h1 class="title">SPACE SHOOT 3D</h1>
+            <div class="subtitle">ARCADE OPERATION MANUAL</div>
+        </div>
+
+        <div class="content-grid">
+            <div class="column">
+                <h2 class="section-title">CABINET CONTROLS</h2>
+                <ul>
+                    <li>
+                        <span class="key">JOYSTICK</span>
+                        <span class="desc">Navigate Ship <br><span style="font-size:10px; color:#888;">(Up/Down/Left/Right)</span></span>
+                    </li>
+                    <li>
+                        <span class="key" style="color:#ff3333; border-color:#ff3333; box-shadow: 2px 2px 0px #ff3333;">RED BTN</span>
+                        <span class="desc">Fire Dual Lasers <br><span style="font-size:10px; color:#888;">(Spacebar)</span></span>
+                    </li>
+                    <li>
+                        <span class="key" style="color:#00ffff; border-color:#00ffff; box-shadow: 2px 2px 0px #00ffff;">1 PLAYER</span>
+                        <span class="desc">Start Game <br><span style="font-size:10px; color:#888;">(R)</span></span>
+                    </li>
+                    <li>
+                        <span class="key">2 PLAYER</span>
+                        <span class="desc">Quit to Menu <br><span style="font-size:10px; color:#888;">(ESC)</span></span>
+                    </li>
+                    <li>
+                        <span class="key" style="color:#00ff00; border-color:#00ff00; box-shadow: 2px 2px 0px #00ff00;">GRN BTN</span>
+                        <span class="desc">Toggle Camera View <br><span style="font-size:10px; color:#888;">(V)</span></span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="column">
+                <h2 class="section-title">MISSION BRIEFING</h2>
+                <ul>
+                    <li>
+                        <span class="desc"><span class="highlight-yellow">OBJECTIVE:</span> Survive 12 waves of hostile alien forces. Defeat the Earth Mothership to win!</span>
+                    </li>
+                    <li>
+                        <span class="desc"><span class="highlight-red">HAZARDS:</span> Avoid direct collision with Asteroids, Meteors, and enemy interceptors. Watch for hostile laser fire!</span>
+                    </li>
+                    <li>
+                        <span class="desc"><span class="highlight-green">RECOVERY:</span> Collect floating <span class="highlight-green">ENERGY PODS</span> to restore 20% hull integrity.</span>
+                    </li>
+                    <li>
+                        <span class="desc"><span class="highlight-blue">HOTKEYS:</span><br><br>
+                        - Press <strong>H</strong> for Hall of Fame<br>
+                        - Press <strong>CTRL+P</strong> to Pause<br>
+                        - Press <strong>Q</strong> to Exit Cabinet</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="credit">PRODUCED BY NEWELL WEB SOLUTIONS</div>
+            INSERT COIN TO CONTINUE
+        </div>
+    </div>
+
+    <!-- Bottom Navigation Link -->
+    <a href="https://tymnewell.github.io/Space-Shoot-arcade-menu/" class="nav-link">RETURN TO ARCADE MENU [Q]</a>
+
+    <!-- Keyboard Navigation Script -->
+    <script>
+        document.addEventListener('keydown', function(event) {
+            // Map the "Q" key to return to the Arcade Menu
+            if (event.code === 'KeyQ') {
+                window.location.href = 'https://tymnewell.github.io/Space-Shoot-arcade-menu/';
+            }
+        });
+    </script>
+
+</body>
+</html>
